@@ -18,19 +18,18 @@ def test_operations_sorted():
 
 def test_operations_formated():
     test_data = [{
-    "id": 801684332,
+    "id": 122284694,
     "state": "EXECUTED",
-    "date": "2019-11-05T12:04:13.781725",
+    "date": "2019-08-08T21:58:06.688541",
     "operationAmount": {
-      "amount": "21344.35",
+      "amount": "98657.83",
       "currency": {
         "name": "руб.",
         "code": "RUB"
       }
     },
-    "description": "Открытие вклада",
-    "to": "Счет 77613226829885488381"
+    "description": "Перевод организации",
+    "from": "Счет 99668626339273709694",
+    "to": "Счет 27219929444683698245"
   }]
-    assert operations_formated(test_data) == """05.11.2019 Открытие вклада
-    -> Счет **8381
-    21344.35 руб."""
+    assert operations_formated(test_data) == """08.08.2019 Перевод организации\nСчет **9694 -> Счет **8245\n98657.83 руб.\n\n"""

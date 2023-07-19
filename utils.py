@@ -19,7 +19,7 @@ def operations_sorted(operations):
 
 
 def operations_formated(operations):
-
+    main_str = []
     for x in operations:
         date = datetime.strptime(x['date'], "%Y-%m-%dT%H:%M:%S.%f").strftime("%d.%m.%Y")
 
@@ -48,9 +48,11 @@ def operations_formated(operations):
 
         name = x["operationAmount"]["currency"]["name"]
 
-        operations_str = (f'{date} {description}\n{from_} -> {to_}\n{amount} {name}\n')
-        print(operations_str)
-        continue
+        operations_str = (f'{date} {description}\n{from_} -> {to_}\n{amount} {name}\n\n')
+        main_str.append(operations_str)
+
+    return ''.join(main_str)
+
 
 
 
